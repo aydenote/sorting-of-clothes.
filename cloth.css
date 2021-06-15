@@ -1,0 +1,99 @@
+:root {
+  /*컬러 변수 지정*/
+  --color-black: #000a12;
+  --color-pupple: #8346cb;
+  --color-blue: #3d5afe;
+  --color-yellow: #ffff72;
+  --color-pink: #ffc1e3;
+  --color-white: white;
+
+  /*사이즈 변수 지정*/
+  --base-space: 8px;
+  --size-button: 60px;
+  --button-font-szie: 18px;
+  --size-border: 4px;
+  --size-thumnail: 50px;
+
+  /*이미지 애니메이션 지정*/
+  --img-animation: 300ms;
+}
+
+body {
+  height: 100vh; /*body를 사용자 화면에 100%로 설정, 간혹 flex 박스로 위치 조정을 해도 움직임이 없어 보이는데 이것은 body 사이즈가 낮게 설정되어 있어서 그런거임*/
+  background-color: var(--color-pupple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer; /* 로고 이미지에 마우스 위치하면 마우스 커서가 손가락 모양으로 변함*/
+  transition: transform var(--img-animation) ease; /* 로고 이미지 변화가 300ms 만큼 느려짐*/
+}
+
+.btn {
+  background-color: transparent; /* 투명*/
+  border: none; /* border 사용 안 함.*/
+  outline: none; /* outline 사용 안 함.*/
+  cursor: pointer;
+  transition: transform var(--img-animation) ease;
+  margin-right: var(--base-space);
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1); /* 마우스 위치하면 이미지 사이즈 변경*/
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--button-font-szie);
+  padding: calc(var(--base-space) * 2); /*calc 계산하는 함수*/
+  border-radius: var(--size-border);
+  margin-bottom: calc(var(--base-space) * 2);
+}
+
+.blue {
+  /*btn colorBtn blue*/
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  /*btn colorBtn yellow*/
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  /*btn colorBtn pink*/
+  background-color: var(--color-pink);
+}
+
+.item {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+  margin-bottom: var(--base-space);
+}
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+  overflow: scroll; /*스크롤 기능 추가*/
+}
+
+.item_thumbnail {
+  width: var(--size-thumnail);
+  height: var(--size-thumnail);
+}
+
+.item_description {
+  margin-left: var(--base-space);
+  font-size: var(--button-font-szie);
+}
