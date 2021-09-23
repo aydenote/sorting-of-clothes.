@@ -1,9 +1,6 @@
 {
-    "items2":{
-        "type" : "seungsoo"
-    }
-    ,
-    "items1":[
+
+    "items":[
     {
         "type": "tshirt",
         "gender": "female",
