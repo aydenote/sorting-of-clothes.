@@ -1,7 +1,7 @@
 // Fetch the items from the JSON file, Json 파일로 부터 items를 동적으로 받아오는 함수
 function loadItems(){    
     return fetch('/cloth.json') // Promise 로 반환.
-    .then(response=> response.json())// 받아온 data를 json으로 변환
+    .then(response=> response.json())// 받아온 data를 json 객체로 변환
     .then(json => json.items) // 변환한 json에서 items라는 항목만 return.
     .catch(error => alert(error)) // error 핸들링
 }
@@ -42,7 +42,7 @@ function onButtonClick(event, items){
     }
     // key는 color 와 type , value는 pink, tshirt, skirt 등이 있다.
     // item 이라는 object에 key에 해당 하는 값이 value와 똑같은 data들만 반환 시킨다.
-    // 각각의 item들이 있는데 우리가 클릭한 item에 key가 우리가 클릭한 value와 동일한 것만 반환.
+    // 각각의 item들이 있는데 내가 클릭한 item에 key가 value와 동일한 것만 반환.
     const filtered = items.filter(item => item[key]===value);
     console.log(filtered);
     displayItems(filtered);
